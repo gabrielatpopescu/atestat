@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizicã cu sclipici</title>
+</head>
+<body>
+
+<h2>Calculator Timp Sideral</h2>
+
+<form id="sideral">
+    <label for="ascensie">Ascensia (ore):</label>
+    <input type="number" id="ascensie" required>
+    <br>
+    <label for="unghiOrar">Unghiul Orar (ore):</label>
+    <input type="number" id="unghiOrar" required>
+    <br>
+    <button type="button" onclick="calculTimpSideral()">Calculeazã Timpul Sideral</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+    function calculTimpSideral() {
+        // Input
+        var ascensie = parseFloat(document.getElementById('ascensie').value);
+        var unghiOrar = parseFloat(document.getElementById('unghiOrar').value);
+        
+        // Calculare Timp Sideral
+        var timpSideral = (ascensie + unghiOrar) % 24;
+        
+        // afi?are
+        document.getElementById('result').innerHTML = "<p>Timp Sideral: " + timpSideral + " ore</p>";
+    }
+</script>
+
+</body>
+</html>
